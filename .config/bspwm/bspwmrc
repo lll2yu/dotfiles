@@ -1,0 +1,43 @@
+#! /bin/sh
+
+sxhkd &
+
+bspc monitor -d ス ス ス ス ス ス ス ス ス ス
+bspc config border_width         	2
+bspc config window_gap           	5
+
+bspc config split_ratio          	0.52
+bspc config borderless_monocle   	true
+bspc config gapless_monocle      	true
+
+bspc rule -a Gimp desktop='^8' state=floating follow=on
+bspc rule -a Firefox desktop='^4'
+bspc rule -a mplayer2 state=floating
+bspc rule -a Kupfer.py focus=on
+bspc rule -a Screenkey manage=off
+bspc rule -a TelegramDesktop desktop=^2
+bspc rule -a Subl desktop=^3
+bspc rule -a Spotify desktop=^5
+bspc rule -a File-roller state=floating
+
+#autostart
+compton -b &
+polybar main &
+xsetroot -cursor_name left_ptr &
+unclutter &
+thunar --daemon &
+wal -R &
+~/.fehbg &
+redshift -c ~/.config/redshift.conf
+
+#source the colors
+. "/home/lll2yu/.cache/wal/colors.sh"
+# Set the border colors.
+bspc config normal_border_color "#5C56A5"
+bspc config active_border_color "#5993D6"
+bspc config focused_border_color "#ECDCED"
+bspc config presel_border_color "#5C56A5"
+
+#open Funny Java Things
+bspc config focus_follows_pointer false
+wmname LG3D
