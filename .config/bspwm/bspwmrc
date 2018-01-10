@@ -2,7 +2,7 @@
 
 sxhkd &
 
-bspc monitor -d ス ス ス ス ス ス ス ス ス ス
+bspc monitor -d 1 2 3 4 5 6
 bspc config border_width         	2
 bspc config window_gap           	5
 
@@ -15,27 +15,32 @@ bspc rule -a Firefox desktop='^4'
 bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
-bspc rule -a TelegramDesktop desktop=^2
-bspc rule -a Subl desktop=^3
-bspc rule -a Spotify desktop=^5
+bspc rule -a TelegramDesktop desktop='^2'
+bspc rule -a Subl desktop='^3'
+bspc rule -a Spotify desktop='^5'
 bspc rule -a File-roller state=floating
+bspc rule -a android-studio-canary desktop='^3'
 
 #autostart
 compton -b &
 polybar main &
+numlockx &
+xset -b &
 xsetroot -cursor_name left_ptr &
 unclutter &
 thunar --daemon &
 wal -R &
 ~/.fehbg &
-redshift -c ~/.config/redshift.conf
+redshift-gtk & 
+nm-applet &
+parcellite 
 
 #source the colors
 . "/home/lll2yu/.cache/wal/colors.sh"
 # Set the border colors.
 bspc config normal_border_color "#5C56A5"
-bspc config active_border_color "#5993D6"
-bspc config focused_border_color "#ECDCED"
+bspc config active_border_color "#4a35f3"
+bspc config focused_border_color "#b217de"
 bspc config presel_border_color "#5C56A5"
 
 #open Funny Java Things
