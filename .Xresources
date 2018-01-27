@@ -7,7 +7,15 @@ URxvt.cursorBlink: True
 
 ! Fonts
 !Anonymous Pro
-URxvt.font: xft:Anonymous\ Pro:size=12
+URxvt.font: xft:Anonymice\ Powerline:size=12,xft:Hack-Regular:size=12,xft:Roboto\ Mono\ for\ Powerline:size=12,xft:Source\ Code\ Pro\ for\ Powerline:size=12,xft:PowerlineSymbols,xft:Symbola:size=12,xft:Anonymice\ Nerd\ Font:size=12
+Xft.lcdfilter: lcddefault
+!-- Xft settings -- !
+Xft.dpi:        96
+Xft.antialias:  true
+Xft.rgba:       rgb
+Xft.hinting:    true
+Xft.hintstyle:  hintslight
+
 URxvt.letterSpace: 0
 
 URxvt.foreground: #ffffff

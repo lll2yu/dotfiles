@@ -1,0 +1,8 @@
+#    yaourtrc  - Configuration for yaourt
+#
+#   See yaourtrc(5) for more information
+#
+#
+
+BUILD_NOCONFIRM=1
+EDITFILES=0
