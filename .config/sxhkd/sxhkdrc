@@ -50,6 +50,21 @@ XF86AudioNext
 XF86AudioPrev 
 	 playerctl previous || mpc prev 
 
+# Lock Screen
+super + alt + Delete 
+	betterlockscreen -l dimblur
+
+# single key launchers
+super + e
+	thunar
+super + b
+	firefox 
+super + a
+	android-studio-canary
+super + i
+	intellij-idea-ultimate-edition
+super + p
+	pycharm
 #
 # bspwm hotkeys
 #
