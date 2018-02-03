@@ -15,11 +15,11 @@ bspc rule -a Firefox desktop='^4'
 bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
+bspc rule -a Oblogout manage=off
 bspc rule -a TelegramDesktop desktop='^2'
 bspc rule -a Subl desktop='^3'
 bspc rule -a Spotify desktop='^5'
 bspc rule -a File-roller state=floating
-bspc rule -a android-studio-canary desktop='^3'
 bspc rule -a Auryo desktop='^5'
 #autostart
 compton -bC
@@ -31,10 +31,14 @@ unclutter &
 thunar --daemon &
 wal -R &
 ~/.fehbg &
-redshift-gtk & 
-nm-applet &
-xautolock -time 11  -locker "betterlockscreen -l dimblur  && sleep 1"-killtime 10 -killer "sleep 1 && xset -display :0.0 dpms force off"  -detectsleep &
-parcellite 
+xidlehook \                                             ✔  09:04 pm 
+  --time 5 \    
+  --timer 'xrandr --output "$(xrandr | grep primary | cut -d " " -f 1)" --brightness 1; betterlockscreen -l dimblur' \
+  --notify 10 \
+  --notifier  'xrandr --output "$(xrandr | grep primary | cut -d " " -f 1)" --brightness .1' \
+  --canceller 'xrandr --output "$(xrandr | grep primary | cut -d " " -f 1)" --brightness 1' \      
+  --not-when-fullscreen
+libinput-gestures-setup start  
 
 #source the colors
 . "/home/lll2yu/.cache/wal/colors.sh"

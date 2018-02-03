@@ -8,6 +8,7 @@ URxvt.cursorBlink: True
 ! Fonts
 !Anonymous Pro
 URxvt.font: xft:Anonymice\ Powerline:size=12,xft:Hack-Regular:size=12,xft:Roboto\ Mono\ for\ Powerline:size=12,xft:Source\ Code\ Pro\ for\ Powerline:size=12,xft:PowerlineSymbols,xft:Symbola:size=12,xft:Anonymice\ Nerd\ Font:size=12
+!URxvt.font: xft:fontawesome-webfont:size=9
 Xft.lcdfilter: lcddefault
 !-- Xft settings -- !
 Xft.dpi:        96
@@ -48,12 +49,6 @@ URxvt.depth:		32
 URxvt.cursorColor:	white
 URxvt.perl-lib:		$HOME/.config/scripts
 URxvt.colorUL:		#4682B4
-
-rofi.color-enabled:	true
-rofi.color-window:	#000, #000, #000
-rofi.color-normal:	#111, #819396, #222, #008ed4, #ffffff
-rofi.color-active:	#002b37, #008ed4, #003643, #008ed4, #66c6ff
-rofi.color-urgent:	#002b37, #da4281, #003643, #008ed4, #890661
 
 rofi.fake-transparency:	true
 rofi.lines:		3
