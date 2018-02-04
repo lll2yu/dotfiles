@@ -9,7 +9,7 @@ background-alt = #333
 foreground = #b2b2b2
 foreground-alt = #ee3333
 
-trans = #DA292b2e
+trans = #FF292b2e
 white = #eee
 grey = #444444
 pink = #d75f87
@@ -48,7 +48,7 @@ border-color = #131313
 
 modules-left = bspwm arrow0 xwindow arrow
 modules-center = 
-modules-right = arrow8 backlight arrow7 wlan arrow6 wlanspeed arrow7 battery arrow6 volume arrow7 date arrow6 menu0
+modules-right = arrow8 backlight arrow7 wlan arrow6 wlanspeed arrow7 battery arrow6 volume arrow7 date arrow6 power
 
 tray-position = right
 tray-background = ${colors.background}
@@ -151,14 +151,6 @@ content-background = ${colors.trans}
 ;	M O D U L E S
 ;-------------------------------------------------------------------------------
 
-[module/backlight]
-type = internal/backlight
-card = intel_backlight
-format = <label>
-label =  %percentage%%
-label-foreground = ${colors.blue}
-label-background = ${colors.background}
-
 [module/bspwm]
 type = internal/bspwm
 
@@ -184,26 +176,6 @@ label-occupied-foreground = ${colors.blue}
 label-empty = %icon%
 label-empty-padding = 1
 label-empty-foreground = ${colors.white}
-[module/cpu]
-type = internal/cpu
-interval = 1.0
-
-format = <label>
-;format = <ramp-coreload><label> 
-format-prefix = " "
-format-foreground = ${colors.purple}
-format-background = ${colors.background}
-
-label = %percentage:3%%
-;   
-
-ramp-coreload-0 = ▁
-ramp-coreload-1 = ▂
-ramp-coreload-2 = ▃
-ramp-coreload-3 = ▄
-ramp-coreload-4 = ▅
-ramp-coreload-5 = ▆
-ramp-coreload-6 = ▇
 
 [module/xwindow]
 type = internal/xwindow
@@ -212,6 +184,15 @@ format-foreground = ${colors.background}
 format-background = ${colors.pink}
 
 label = "» %title:0:22:...%"
+
+[module/backlight]
+type = internal/backlight
+card = intel_backlight
+format = <label>
+label =  %percentage%%
+label-foreground = ${colors.blue}
+label-background = ${colors.background}
+
 [module/wlanspeed]
 type = internal/network
 interface = wlp6s0
@@ -324,76 +305,11 @@ animation-charging-3 = 
 animation-charging-4 = 
 animation-charging-framerate = 750
 
-
-[module/temperature]
-type = internal/temperature
-thermal-zone = 0
-warn-temperature = 60
-
-format = <ramp> <label>
-format-underline = #f50a4d
-format-warn = <ramp> <label-warn>
-format-warn-underline = ${self.format-underline}
-
-label = %temperature%
-label-warn = %temperature%
-label-warn-foreground = ${colors.secondary}
-
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
-ramp-foreground = ${colors.foreground-alt}
-
-[module/menu0]
-type = custom/menu
-format-foreground = ${colors.pink}
-format = <label-toggle> <menu>
-format-padding = 1
-format-margin = 0
-
-menu-0-0 =  shutdown
-menu-0-0-exec = shutdown now
-menu-0-1 =  restart
-menu-0-1-exec = shutdown -r now
-menu-0-2 =   cancel
-
-
-label-open = 
-label-close =
-
-[module/powermenu]
-type = custom/menu
-
-format-spacing = 1
-
-label-open = 
-label-open-foreground = ${colors.icon-foreground}
-label-close =  cancel
-label-close-foreground = ${colors.icon-foreground}
-label-separator-foreground = ${colors.foreground-icon}
-label-separator = =
-
-menu-0-0 = reboot
-menu-0-0-exec = menu-open-1
-menu-0-1 = power off
-menu-0-1-exec = menu-open-2
-
-menu-1-0 = cancel
-menu-1-0-exec = menu-open-0
-menu-1-1 = reboot
-menu-1-1-exec = sudo reboot
-
-menu-2-0 = power off
-menu-2-0-exec = sudo poweroff
-menu-2-1 = cancel
-menu-2-1-exec = menu-open-0
-
-[module/music]
-type = custom/script
-interval = 1
-
-label = %output:0:45:...%
-exec = ~/comfy_guration/scripts/polybar/poly_music.sh
+[module/power]
+type = custom/text
+content =  
+content-foreground = ${colors.pink}
+click-left = oblogout
 
 [settings]
 screenchange-reload = true
