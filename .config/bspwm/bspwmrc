@@ -21,24 +21,22 @@ bspc rule -a Subl desktop='^3'
 bspc rule -a Spotify desktop='^5'
 bspc rule -a File-roller state=floating
 bspc rule -a Auryo desktop='^5'
+bspc rule -a stalonetray manage=off
 #autostart
-compton -bC
+compton -b
 polybar main &
 numlockx &
 xset -b &
-xsetroot -cursor_name left_ptr &
 unclutter &
 thunar --daemon &
 wal -R &
-~/.fehbg &
-xidlehook \                                             ✔  09:04 pm 
-  --time 5 \    
-  --timer 'xrandr --output "$(xrandr | grep primary | cut -d " " -f 1)" --brightness 1; betterlockscreen -l dimblur' \
-  --notify 10 \
-  --notifier  'xrandr --output "$(xrandr | grep primary | cut -d " " -f 1)" --brightness .1' \
-  --canceller 'xrandr --output "$(xrandr | grep primary | cut -d " " -f 1)" --brightness 1' \      
-  --not-when-fullscreen
-libinput-gestures-setup start  
+libinput-gestures-setup start &
+stalonetray &
+parcellite &
+safeeyes &
+redshift-gtk &
+/usr/lib/jvm/java-8-openjdk/jre/bin/java" -Xmx1024m -jar "/opt/xdman/xdman.jar &
+xidlehook --time 5 --timer 'xrandr --output "$(xrandr | grep primary | cut -d " " -f 1)" --brightness 1; betterlockscreen -l dimblur' --notify 10 --notifier  'xrandr --output "$(xrandr | grep primary | cut -d " " -f 1)" --brightness .1' --canceller 'xrandr --output "$(xrandr | grep primary | cut -d " " -f 1)" --brightness 1' --not-when-fullscreen --not-when-audio
 
 #source the colors
 . "/home/lll2yu/.cache/wal/colors.sh"
